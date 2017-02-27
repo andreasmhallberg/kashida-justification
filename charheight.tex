@@ -1,0 +1,31 @@
+\documentclass{article}
+\usepackage{calc}
+\usepackage{polyglossia}
+\setmainlanguage{enghlish}
+\setotherlanguage{arabic}
+\newfontfamily\arabicfont[Script=Arabic]{Amiri}
+
+
+\newlength\taaheight
+\setlength\taaheight{\heightof{\textarabic{ت}}}
+\newlength\taadepth
+\setlength\taadepth{\depthof{{ت}}}
+
+\newlength\dheight
+\setlength\dheight{\heightof{d}}
+\newlength\ddepth
+\setlength\ddepth{\depthof{d}}
+
+
+\begin{document}
+The height d is \the\dheight.
+
+The depth d is \the\ddepth.
+
+\bigskip
+
+The height of \textarabic{ت} is \the\taaheight.
+
+The depth of \textarabic{ت} is \the\taadepth.
+
+\end{document}

@@ -1,0 +1,116 @@
+\documentclass[a5paper]{article}
+\usepackage{calc}
+\usepackage{multicol}
+\usepackage{polyglossia}
+\usepackage[hmargin=1cm, vmargin=1cm]{geometry}
+\setmainlanguage{arabic}
+\newfontfamily\arabicfont[Script=Arabic]{Lateef}
+
+
+\pagestyle{empty}
+
+\XeTeXinterchartokenstate=1
+\newXeTeXintercharclass\confb % connect back
+\newXeTeXintercharclass\conb  % connect front back
+\newXeTeXintercharclass\alif  % alif
+\newXeTeXintercharclass\lam   % lam
+
+\XeTeXcharclass `\ي=\confb 
+\XeTeXcharclass `\ئ=\confb
+\XeTeXcharclass `\ه=\confb
+\XeTeXcharclass `\ش=\confb
+\XeTeXcharclass `\س=\confb
+\XeTeXcharclass `\ق=\confb
+\XeTeXcharclass `\ف=\confb
+\XeTeXcharclass `\غ=\confb
+\XeTeXcharclass `\ع=\confb
+\XeTeXcharclass `\ض=\confb
+\XeTeXcharclass `\ص=\confb
+\XeTeXcharclass `\ن=\confb
+\XeTeXcharclass `\م=\confb
+\XeTeXcharclass `\ك=\confb
+\XeTeXcharclass `\ظ=\confb
+\XeTeXcharclass `\ط=\confb
+\XeTeXcharclass `\خ=\confb
+\XeTeXcharclass `\ح=\confb
+\XeTeXcharclass `\ج=\confb
+\XeTeXcharclass `\ث=\confb
+\XeTeXcharclass `\ت=\confb
+\XeTeXcharclass `\ب=\confb
+
+\XeTeXcharclass `\ل=\lam
+
+\XeTeXcharclass `\ا=\alif
+\XeTeXcharclass `\أ=\alif
+\XeTeXcharclass `\إ=\alif
+\XeTeXcharclass `\آ=\alif
+
+\XeTeXcharclass `\و=\conb
+\XeTeXcharclass `\ؤ=\conb
+\XeTeXcharclass `\ذ=\conb
+\XeTeXcharclass `\د=\conb
+\XeTeXcharclass `\ز=\conb
+\XeTeXcharclass `\ر=\conb
+\XeTeXcharclass `\ة=\conb
+
+ \XeTeXinterchartoks \confb \confb = {\kashida{}}
+ \XeTeXinterchartoks \lam \lam     = {\kashida{}}
+ \XeTeXinterchartoks \confb \alif  = {\kashida{}}
+ \XeTeXinterchartoks \confb \lam   = {\kashida{}}
+ \XeTeXinterchartoks \lam \confb   = {\kashida{}}
+ \XeTeXinterchartoks \lam \conb    = {\kashida{}}
+ \XeTeXinterchartoks \confb \conb  = {\kashida{}}
+
+\newlength\kashidaheight
+\setlength\kashidaheight{\heightof{\textarabic{ـ}}} \newlength\kashidadepth
+\setlength\kashidadepth{\depthof{\textarabic{ـ}}}
+
+\newcommand\kashida[1]{\char"200D
+	    \nobreak\leaders
+		\hrule height \kashidaheight depth \kashidadepth
+		\hskip 0pt plus 100 pt
+	    \nobreak\char"200D}
+
+	   % \renewcommand\kashida{\char"200D} % turn off kashida
+
+	   \frenchspacing
+
+	   
+
+	\begin{document}
+
+
+
+\begin{multicols}{3}
+\setlength\parskip{0pt}
+	شنّت القوات العراقية هجوما على مطار مدينة الموصل، أحد أهم أهداف العملية العسكرية لطرد مسلحي تنظيم الدولة الإسلامية من شطر المدينة الغربي.  كما اقتحمت القوات معسكر الغزلاني القريب من المطار، والذي شهد اشتباكات عسكرية عنيفة، بحسب وكالة أسوشيتد برس.  يشار إلى أن تنظيم الدولة قد دمّر بالفعل ممر الطائرات، غير أن الاستيلاء على مثل هذا الموقع المهم من شأنه مساعدة الجيش العراقي في السيطرة على الطرق المؤدية إلى المدينة.
+
+واستعادت القوات العراقية والميليشيات الموالية لها الشطر الشرقي للمدينة، الشهر الماضي.  ويقول مراسل بي بي سي، كوينتين سومرفيل، الذي رافق القوات العراقية، إنهم وصلوا إلى محيط المطار.  وقال متحدث باسم الجيش لفضائية "العراقية" إن غارات متزامنة يُجرى شنها على المطار وقاعدة الغزلاني لـ "تشتيت" مسلحي تنظيم الدولة.
+
+وكانت منشورات قد أُلقيت في وقت سابق، للتحذير من شنّ هجوم وشيك على غرب المدينة، الذي يقول مسؤولون عسكريون إن شوارعه المتعرجة والضيقة قد تجعل استعادة المنطقة مهمة صعبة. وعلى الرغم من أن غرب المدينة أصغر بقليل من شرقها، إلا أنه أكثر كثافة ويضم مناطق يُنظر إليها باعتبارها مؤيدة لتنظيم الدولة.  وأعربت الأمم المتحدة عن قلقها بشأن الأوضاع المعيشية للمدنيين المحاصرين في المدينة، وسط تقارير عن أن عددهم قد يرتفع إلى 650 ألفا.  وفرّ بالفعل ما يربو على 160 ألف شخص من منازلهم داخل المدينة وحولها.  
+
+\end{multicols}
+
+\vfill
+
+\begin{multicols}{4}
+	شنّت القوات العراقية هجوما على مطار مدينة الموصل، أحد أهم أهداف العملية العسكرية لطرد مسلحي تنظيم الدولة الإسلامية من شطر المدينة الغربي.  كما اقتحمت القوات معسكر الغزلاني القريب من المطار، والذي شهد اشتباكات عسكرية عنيفة، بحسب وكالة أسوشيتد برس.  يشار إلى أن تنظيم الدولة قد دمّر بالفعل ممر الطائرات، غير أن الاستيلاء على مثل هذا الموقع المهم من شأنه مساعدة الجيش العراقي في السيطرة على الطرق المؤدية إلى المدينة.
+
+واستعادت القوات العراقية والميليشيات الموالية لها الشطر الشرقي للمدينة، الشهر الماضي.  ويقول مراسل بي بي سي، كوينتين سومرفيل، الذي رافق القوات العراقية، إنهم وصلوا إلى محيط المطار.  وقال متحدث باسم الجيش لفضائية "العراقية" إن غارات متزامنة يُجرى شنها على المطار وقاعدة الغزلاني لـ "تشتيت" مسلحي تنظيم الدولة.  
+
+وكانت منشورات قد أُلقيت في وقت سابق، للتحذير من شنّ هجوم وشيك على غرب المدينة، الذي يقول مسؤولون عسكريون إن شوارعه المتعرجة والضيقة قد تجعل استعادة المنطقة مهمة صعبة. وعلى الرغم من أن غرب المدينة أصغر بقليل من شرقها، إلا أنه أكثر كثافة ويضم مناطق يُنظر إليها باعتبارها مؤيدة لتنظيم الدولة.  وأعربت الأمم المتحدة عن قلقها بشأن الأوضاع المعيشية للمدنيين المحاصرين في المدينة، وسط تقارير عن أن عددهم قد يرتفع إلى 650 ألفا.  وفرّ بالفعل ما يربو على 160 ألف شخص من منازلهم داخل المدينة وحولها.  
+
+\end{multicols}
+
+\vfill
+
+\begin{multicols}{5}
+	شنّت القوات العراقية هجوما على مطار مدينة الموصل، أحد أهم أهداف العملية العسكرية لطرد مسلحي تنظيم الدولة الإسلامية من شطر المدينة الغربي.  كما اقتحمت القوات معسكر الغزلاني القريب من المطار، والذي شهد اشتباكات عسكرية عنيفة، بحسب وكالة أسوشيتد برس.  يشار إلى أن تنظيم الدولة قد دمّر بالفعل ممر الطائرات، غير أن الاستيلاء على مثل هذا الموقع المهم من شأنه مساعدة الجيش العراقي في السيطرة على الطرق المؤدية إلى المدينة.
+
+واستعادت القوات العراقية والميليشيات الموالية لها الشطر الشرقي للمدينة، الشهر الماضي.  ويقول مراسل بي بي سي، كوينتين سومرفيل، الذي رافق القوات العراقية، إنهم وصلوا إلى محيط المطار.  وقال متحدث باسم الجيش لفضائية "العراقية" إن غارات متزامنة يُجرى شنها على المطار وقاعدة الغزلاني لـ "تشتيت" مسلحي تنظيم الدولة.  
+
+وكانت منشورات قد أُلقيت في وقت سابق، للتحذير من شنّ هجوم وشيك على غرب المدينة، الذي يقول مسؤولون عسكريون إن شوارعه المتعرجة والضيقة قد تجعل استعادة المنطقة مهمة صعبة. وعلى الرغم من أن غرب المدينة أصغر بقليل من شرقها، إلا أنه أكثر كثافة ويضم مناطق يُنظر إليها باعتبارها مؤيدة لتنظيم الدولة.  وأعربت الأمم المتحدة عن قلقها بشأن الأوضاع المعيشية للمدنيين المحاصرين في المدينة، وسط تقارير عن أن عددهم قد يرتفع إلى 650 ألفا.  وفرّ بالفعل ما يربو على 160 ألف شخص من منازلهم داخل المدينة وحولها.  
+\end{multicols}
+
+	\end{document}
+
