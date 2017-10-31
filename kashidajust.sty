@@ -1,0 +1,111 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{kashidajust}
+\RequirePackage{polyglossia}
+\RequirePackage{etoolbox}
+% \setmainlanguage{arabic}
+% \newfontfamily\arabicfont[Script=Arabic]{Lateef}
+
+% Interchartoks
+\XeTeXinterchartokenstate=1
+\newXeTeXintercharclass\confb % connect back
+\newXeTeXintercharclass\conb  % connect front back
+\newXeTeXintercharclass\alif  % alif
+\newXeTeXintercharclass\lam   % lam
+
+\XeTeXcharclass `\ي=\confb 
+\XeTeXcharclass `\ئ=\confb
+\XeTeXcharclass `\ه=\confb
+\XeTeXcharclass `\ش=\confb
+\XeTeXcharclass `\س=\confb
+\XeTeXcharclass `\ق=\confb
+\XeTeXcharclass `\ف=\confb
+\XeTeXcharclass `\غ=\confb
+\XeTeXcharclass `\ع=\confb
+\XeTeXcharclass `\ض=\confb
+\XeTeXcharclass `\ص=\confb
+\XeTeXcharclass `\ن=\confb
+\XeTeXcharclass `\م=\confb
+\XeTeXcharclass `\ك=\confb
+\XeTeXcharclass `\ظ=\confb
+\XeTeXcharclass `\ط=\confb
+\XeTeXcharclass `\خ=\confb
+\XeTeXcharclass `\ح=\confb
+\XeTeXcharclass `\ج=\confb
+\XeTeXcharclass `\ث=\confb
+\XeTeXcharclass `\ت=\confb
+\XeTeXcharclass `\ب=\confb
+
+\XeTeXcharclass `\ل=\lam
+
+\XeTeXcharclass `\ا=\alif
+\XeTeXcharclass `\أ=\alif
+\XeTeXcharclass `\إ=\alif
+\XeTeXcharclass `\آ=\alif
+
+\XeTeXcharclass `\و=\conb
+\XeTeXcharclass `\ؤ=\conb
+\XeTeXcharclass `\ذ=\conb
+\XeTeXcharclass `\د=\conb
+\XeTeXcharclass `\ز=\conb
+\XeTeXcharclass `\ر=\conb
+\XeTeXcharclass `\ة=\conb
+
+
+ \XeTeXinterchartoks \confb \confb = {\k@shida{}}
+ \XeTeXinterchartoks \lam \lam     = {\k@shida{}}
+ \XeTeXinterchartoks \confb \alif  = {\k@shida{}}
+ \XeTeXinterchartoks \confb \lam   = {\k@shida{}}
+ \XeTeXinterchartoks \lam \confb   = {\k@shida{}}
+ \XeTeXinterchartoks \lam \conb    = {\k@shida{}}
+ \XeTeXinterchartoks \confb \conb  = {\k@shida{}}
+
+
+% new lengths
+\newlength\k@shidaheight
+\setlength\k@shidaheight{\heightof{\textarabic{ـ}}}
+\newlength\k@shidadepth
+\setlength\k@shidadepth{\depthof{\textarabic{ـ}}}
+
+\newcommand{\remeasurek@shida}{%
+    \setlength\k@shidaheight{\heightof{\textarabic{ـ}}}%
+    \setlength\k@shidadepth{\depthof{\textarabic{ـ}}}%
+}
+
+
+\newcommand{\k@shidaline}{\null}
+
+\newcommand{\k@shida}{%
+    \char"200D%
+    \k@shidaline
+    \nobreak
+    \leaders\hrule height \k@shidaheight depth \k@shidadepth\hskip 0pt plus 100 pt%
+    \k@shidaline
+    \nobreak%
+    \char"200D%
+}
+
+% \renewcommand\kashida{\char"200D} % turn off kashida
+
+% Remeasure kashida when font changes
+\appto{\fontspec  }{ \remeasurek@shida}
+
+% Remeasure kashida when fontsize changes
+\appto{\tiny        }{ \remeasurek@shida}
+\appto{\scriptsize  }{ \remeasurek@shida}
+\appto{\small       }{ \remeasurek@shida}
+\appto{\footnotesize}{ \remeasurek@shida}
+\appto{\normalsize  }{ \remeasurek@shida}
+\appto{\large       }{ \remeasurek@shida}
+\appto{\Large       }{ \remeasurek@shida}
+\appto{\huge        }{ \remeasurek@shida}
+
+% Remeasure kashida when font-series changes
+\appto{\bfseries }{ \remeasurek@shida}
+\appto{\itshape  }{ \remeasurek@shida}
+\appto{\upshape  }{ \remeasurek@shida}
+\appto{\upshape  }{ \remeasurek@shida}
+
+% SHOW KASHIDA
+\newcommand{\showkashida}{
+    \renewcommand{\k@shidaline}{\nobreak\rule{.1pt}{1ex}}%
+}
